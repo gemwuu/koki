@@ -1,0 +1,64 @@
+{
+  "name": "koki",
+  "version": "0.0.0",
+  "description": "CLI Framework",
+  "files": [
+    "dist",
+    "!dist/tsconfig.tsbuildinfo"
+  ],
+  "type": "commonjs",
+  "types": "./lib/index.d.ts",
+  "main": "./lib/index.js",
+  "workspaces": [
+    "apps"
+  ],
+  "scripts": {
+    "prebuild": "rm -rf dist tsconfig.tsbuildinfo",
+    "build": "tsc -p ./tsconfig.json --incremental",
+    "postbuild": "rm -rf tsconfig.tsbuildinfo",
+    "lint": "eslint src/ test/ --ext .ts",
+    "lint:fix": "npm run lint -- --fix",
+    "ci": "npm run lint && vitest run --coverage",
+    "test": "vitest",
+    "posttest": "rm -rf coverage",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@artus/core": "^1.0.0-beta.28",
+    "chalk": "^4.1.2",
+    "debug": "^4.3.4",
+    "reflect-metadata": "^0.1.13",
+    "tslib": "^2.4.0"
+  },
+  "devDependencies": {
+    "@eggjs/tsconfig": "^1.1.0",
+    "@types/node": "^18.6.5",
+    "coffee": "^5.4.0",
+    "eslint": "^8.24.0",
+    "eslint-config-egg": "^12.1.0",
+    "eslint-import-resolver-typescript": "^3.5.1",
+    "eslint-plugin-import": "^2.26.0",
+    "esno": "^0.16.3",
+    "execa": "^5.1.1",
+    "typescript": "^4.7.4",
+    "vite": "^3.1.8",
+    "vitest": "^0.24.1"
+  },
+  "engines": {
+    "node": ">=14.17.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gemwuu/koki.git"
+  },
+  "keywords": [
+    "CLI",
+    "Framework"
+  ],
+  "author": "gemwuu<gemwuu@163.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gemwuu/koki/issues"
+  },
+  "homepage": "https://github.com/gemwuu/koki#readme"
+}

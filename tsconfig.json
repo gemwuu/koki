@@ -1,0 +1,43 @@
+{
+  "extends": "@eggjs/tsconfig",
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "downlevelIteration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "newLine": "LF",
+    "checkJs": false,
+    "allowJs": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "suppressExcessPropertyErrors": true,
+    "forceConsistentCasingInFileNames": true,
+    "target": "ES2018",
+    "esModuleInterop": true,
+    "stripInternal": true,
+    "lib": [
+      "ESNext"
+    ],
+    "composite": true,
+    "types": [
+      "node",
+      "vitest/globals"
+    ],
+    "baseUrl": "src",
+    "paths": {
+      "core/*": [ "core/*" ],
+      "hooks/*": [ "hooks/*" ],
+      "plugins/*": [ "plugins/*" ],
+    },
+    "outDir": "dist",
+  },
+  "exclude": [
+    "vitest.config.ts",
+    "test"
+  ]
+}

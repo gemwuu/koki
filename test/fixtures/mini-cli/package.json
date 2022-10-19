@@ -1,0 +1,6 @@
+{
+  "name": "mini-cli",
+  "version": "1.0.0",
+  "main": "index.js",
+  "bin": "bin/index.js"
+}

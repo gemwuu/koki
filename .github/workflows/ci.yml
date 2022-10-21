@@ -16,9 +16,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Install npm
-        uses: npm/action-setup@v2
-
       - name: Set node
         uses: actions/setup-node@v3
         with:
@@ -48,9 +45,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-
-      - name: Install npm
-        uses: npm/action-setup@v2
 
       - name: Set node version to ${{ matrix.node_version }}
         uses: actions/setup-node@v3
